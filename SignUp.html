@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link href="./CSS/SignUp.css" rel="stylesheet" type="text/css" />
+    <script defer src="./JS/SignUp.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
 
     <div class="info_email">
         <h6>이메일</h6>
-        <input class="box" id="domain-txt" type="text" />
+        <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
         <select class="box" id="domain-list">
             <option value="type">직접 입력</option>
             <option value="naver.com">naver.com</option>
@@ -56,13 +57,41 @@
 
     <div id="info_phone">
         <h6>* 전화번호</h6>
-        <input type="tel" name="phone1" placeholder="010" />
-        <input type="tel" name="phone2" />
+        <input type="tel" name="phone1" placeholder="010" /> -
+        <input type="tel" name="phone2" /> -
         <input type="tel" name="phone3" />
     </div>
 
     <h6>-----------------------------------------------------------------------------------------------------------------------------
     </h6>
+
+    <!-- <form method="get" action="form-action.html">
+        <label><input type="checkbox" name="check_all"> 약관 전체 동의</label><br><br>
+        <label><input type="checkbox" name="service"> 서비스 이용약관</label><br><br>
+        <label><input type="checkbox" name="personal"> 개인정보수집 및 이용</label><br><br>
+        <label><input type="checkbox" name="email_want"> 이메일 수신동의(선택)</label><br><br>
+
+    </form> -->
+
+    <label for="agree_all">
+        <input type="checkbox" name="agree_all" id="agree_all">
+        <span>약관 전체 동의</span>
+    </label><br><br>
+    <label for="agree">
+        <input type="checkbox" name="agree" value="1">
+        <span>서비스 이용약관<strong>(필수)</strong></span>
+    </label><br><br>
+    <label for="agree">
+        <input type="checkbox" name="agree" value="2">
+        <span>개인정보 수집 및 이용<strong>(필수)</strong></span>
+    </label><br><br>
+    <label for="agree">
+        <input type="checkbox" name="agree" value="3">
+        <span>이메일 수신동의<strong class="select_disable">(선택)</strong></span>
+    </label><br><br>
+    <p><input type="submit" value="회원가입"> </p>
+
+
 </body>
 
 </html>
