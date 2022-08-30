@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko-KR">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디찾기</title>
+    <title>아이디 찾기</title>
 </head>
 
 <body>
 
-</body>
+    <h4>아이디 찾기</h4>
+    <form action="#" name="find-pw-info" id="find-pw-info" method="post">
+        <input type='button' value='아이디 찾기' />
+        <h4>비밀번호 찾기</h4>
+        <form action="#" name="find-pw-info" id="find-pw-info" method="post">
+            <input type='button' value='비밀번호 찾기' />
 
-</html>
+            <p hidden>일치하는 정보가 없습니다.</p>
+            <!-- 전화번호 -->
+            <p>
+                <label for="user-phone">
+                    <input type="text" placeholder="전화번호 (숫자만 입력해주세요.)" name="user-phone" id="user-phone" required>
+                </label>
+            <p hidden>전화번호를 정확히 입력해주세요.</p>
+            </p>
+            <!-- 이메일 -->
+            <p>
+                <label for="user-email">
+                    <input type="email" placeholder="이메일" name="user-email" id="user-email" required>
+                </label>
+            <p hidden>이메일 주소를 정확히 입력해주세요.</p>
+            </p>
+            <!-- 비밀번호 찾기 -->
+            <p>
+                <button type="submit">비밀번호 찾기</button>
+            </p>
+        </form>
