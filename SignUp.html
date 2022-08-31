@@ -48,6 +48,7 @@
     <div class="info_email">
         <h6>이메일</h6>
         <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
+        <input class="box" id="domain-txt" type="text" placeholder="직접 입력" />
         <select class="box" id="domain-list">
             <option value="type">직접 입력</option>
             <option value="naver.com">naver.com</option>
@@ -61,9 +62,14 @@
 
     <div id="info_phone">
         <h6>* 전화번호</h6>
-        <input type="tel" name="phone1" placeholder="010" /> -
-        <input type="tel" name="phone2" /> -
-        <input type="tel" name="phone3" />
+        <select name="phone1">
+            <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
+            <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
+            <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
+            <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
+        </select> -
+        <input type="tel" name="phone2" size="5" /> -
+        <input type="tel" name="phone3" size="5" />
         <input type="hidden" placeholder="전화번호를 입력해주세요.">
     </div>
 

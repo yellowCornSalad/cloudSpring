@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+</head>
+
+<body>
+    <h1>MY PAGE</h1>
+    <h4>아이디</h4>
+    아이디 보여주기
+
+    <!-- 비밀번호 변경 -->
+    <h4>비밀번호 변경</h4>
+    <button>비밀번호 재설정</button>
+
+    <!-- 이름 보여주기 -->
+    <h4>이름</h4>
+    이름 보여주기
+
+    <!-- 생년월일 보여주기 -->
+    <h4>생년월일</h4>
+    생년월일 보여주기
+
+    <!-- 이메일 -->
+    <div class="info_email">
+        <h6>이메일</h6>
+        <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
+        <input class="box" id="domain-txt" type="text" placeholder="" />
+        <select class="box" id="domain-list">
+            <option value="type">직접 입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="google.com">google.com</option>
+            <option value="hanmail.net">hanmail.net</option>
+            <option value="nate.com">nate.com</option>
+            <option value="kakao.com">kakao.com</option>
+        </select>
+    </div>
+
+    <!-- 전화번호 -->
+    <div id="info_phone">
+        <h6>전화번호</h6>
+        <select name="phone1">
+            <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
+            <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
+            <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
+            <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
+        </select> -
+
+        <input type="tel" name="phone2" size="5" /> -
+        <input type="tel" name="phone3" size="5" />
+        <input type="hidden" placeholder="전화번호를 입력해주세요.">
+    </div>
+    <br>
+    -------------------------------------------
+    <p><input type="submit" value="회원정보저장"> </p>
+
+    <a href="https://">회원탈퇴</a>
+
+</body>
+
+</html>
