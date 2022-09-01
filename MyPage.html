@@ -15,6 +15,69 @@
         * {
             font-family: 'Noto Sans KR', sans-serif;
         }
+
+        /* 전체 문맥 가운데로 */
+        #wrapper {
+            margin: 50px auto 10px;
+            padding: 30px 20px 30px 0px;
+            width: 500px;
+        }
+
+        /* MY PAGE */
+        #mp0 {
+            margin: 30px auto;
+            width: 249px;
+            font-weight: 400;
+            font-size: 25px;
+        }
+
+        #pwRch {
+            flex: 0.5;
+            margin-top: 12px;
+            width: 380px;
+        }
+
+        /* 이메일 */
+        .box {
+            width: 80px;
+            height: 35px;
+            border: 0px solid #9bd6c6;
+            border-radius: 5px;
+            padding-left: 5px;
+            background-color: #d3d3d3;
+        }
+
+        /* 전화번호  */
+        /* .info_phone {
+            width: 320px;
+            height: 35px;
+            border: 0px solid #9bd6c6;
+            border-radius: 5px;
+            padding-left: 5px;
+            background-color: #d3d3d3;
+        } */
+
+        /* 밑줄 */
+        hr {
+            border: 0.1px solid #A6A6A6;
+        }
+
+        /* 회원정보 저장 */
+        .save_btn {
+            margin-top: 5px;
+            width: 100%;
+            height: 35px;
+            font-size: 16px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: #77c8b2;
+        }
+
+        /* 회원탈퇴 */
+        .mbOut {
+            width: 380px;
+            margin: 0px auto;
+        }
     </style>
 </head>
 
@@ -24,9 +87,11 @@
             <h1>MY PAGE</h1>
         </div>
 
-        <div id="showId">
+        <div id="Id">
             <h4>아이디</h4>
-            아이디 보여주기
+            <div id="showId">
+                아이디 보여주기
+            </div>
         </div>
 
         <!-- 비밀번호 변경 -->
@@ -38,24 +103,24 @@
         </div>
 
         <!-- 이름 보여주기 -->
-        <div id="showId">
+        <div id="showName">
             <h4>이름</h4>
-            이름 보여주기
         </div>
+        이름 보여주기
 
-        <div id=showBth>
+        <div class=showBth>
             <!-- 생년월일 보여주기 -->
             <h4>생년월일</h4>
-            생년월일 보여주기
         </div>
+        생년월일 보여주기
 
         <!-- 이메일 -->
         <div class="info_email">
-            <h6>이메일</h6>
+            <h4>이메일</h4>
             <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
-            <input class="box" id="domain-txt" type="text" placeholder="" />
+            <input class="box" id="domain-txt" type="text" placeholder="" />&nbsp;&nbsp;
             <select class="box" id="domain-list">
-                <option value="type">직접 입력</option>
+                <option value="type">선택</option>
                 <option value="naver.com">naver.com</option>
                 <option value="google.com">google.com</option>
                 <option value="hanmail.net">hanmail.net</option>
@@ -65,28 +130,27 @@
         </div>
 
         <!-- 전화번호 -->
-        <div id="info_phone">
-            <h6>전화번호</h6>
-            <select name="phone1">
+        <div class="info_phone">
+            <h4>전화번호</h4>
+            <select class="box" id="phone1">
                 <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
                 <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
                 <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
                 <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
             </select> -
-
-            <input type="tel" name="phone2" size="5" /> -
-            <input type="tel" name="phone3" size="5" />
-            <input type="hidden" placeholder="전화번호를 입력해주세요.">
+            <input class="box" type="tel" id="phone2" size="5" /> -
+            <input class="box" type="tel" id="phone3" size="5" />
+            <input class="box" type="hidden" placeholder="전화번호를 입력해주세요.">
         </div>
-        <br>
-        -------------------------------------------
+        <hr>
+
         <!-- 회원정보 저장 버튼 -->
-        <div id="saveMp">
-            <p><input type="submit" value="회원정보저장"> </p>
+        <div class="saveMp">
+            <p><input type="submit" value="회원정보저장" class="save_btn"> </p>
         </div>
 
         <!-- 회원 탈퇴 -->
-        <div id="mbOut">
+        <div class="mbOut">
             <a href="https://">회원탈퇴</a>
         </div>
     </div>
