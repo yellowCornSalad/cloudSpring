@@ -36,10 +36,18 @@
             float: left;
         } */
 
+        /* 아이디 보여주기 */
+        #showId {
+            flex: 0.5;
+            margin-top: -68px;
+            width: 350px;
+            float: right;
+        }
+
         /* 비밀번호 재설정 */
         #pwRch {
             flex: 0.5;
-            margin-top: -60px;
+            margin-top: -84px;
             width: 350px;
             float: right;
         }
@@ -55,6 +63,22 @@
             transition: 0.25s;
         }
 
+        /* 이름 보여주기 */
+        #showName {
+            flex: 0.5;
+            margin-top: -70px;
+            width: 350px;
+            float: right;
+        }
+
+        /* 생년월일 보여주기 */
+        #showBth {
+            flex: 0.5;
+            margin-top: -70px;
+            width: 350px;
+            float: right;
+        }
+
         /* 이메일 */
         .box {
             width: 80px;
@@ -66,8 +90,24 @@
 
         }
 
+        /* 이메일 박스들이 이메일 글자 오른쪽으로 오도록 */
+        #ardEmBx {
+            flex: 0.5;
+            margin-top: -75px;
+            width: 350px;
+            float: right;
+        }
+
+        #ardPN {
+            flex: 0.5;
+            margin-top: -50px;
+            width: 350px;
+            float: right;
+        }
+
         /* 밑줄 */
         hr {
+            margin: 30px auto;
             border: 0.1px solid #A6A6A6;
         }
 
@@ -98,7 +138,7 @@
         </div>
 
         <div id="Id">
-            <h4>아이디</h4>
+            <h4>아이디</h4><br>
             <div id="showId">
                 아이디 보여주기
             </div>
@@ -106,7 +146,7 @@
 
         <!-- 비밀번호 변경 -->
         <div id="pwCh">
-            <h4>비밀번호 변경</h4>
+            <h4>비밀번호 변경</h4><br>
         </div>
         <div id="pwRch">
             <!-- <button class="w-btn-outline w-btn-green-outline" type="button"> -->
@@ -115,44 +155,48 @@
 
         <!-- 이름 보여주기 -->
         <div id="name">
-            <h4>이름</h4>
+            <h4>이름</h4><br>
         </div>
         <div id="showName">이름 보여주기</div>
 
 
-        <div class=showBth>
+        <div class="Bth">
             <!-- 생년월일 보여주기 -->
-            <h4>생년월일</h4>
+            <h4>생년월일</h4><br>
         </div>
-        생년월일 보여주기
+        <div id="showBth">생년월일 보여주기</div>
 
         <!-- 이메일 -->
-        <div class="info_email">
-            <h4>이메일</h4>
-            <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
-            <input class="box" id="domain-txt" type="text" placeholder="" />&nbsp;&nbsp;
-            <select class="box" id="domain-list">
-                <option value="type">선택</option>
-                <option value="naver.com">naver.com</option>
-                <option value="google.com">google.com</option>
-                <option value="hanmail.net">hanmail.net</option>
-                <option value="nate.com">nate.com</option>
-                <option value="kakao.com">kakao.com</option>
-            </select>
+        <div id="info_email">
+            <h4>이메일</h4><br>
+            <div id="ardEmBx">
+                <input class="box" id="domain-txt" type="text" placeholder="이메일 입력" /> @
+                <input class="box" id="domain-txt" type="text" placeholder="" />&nbsp;&nbsp;
+                <select class="box" id="domain-list">
+                    <option value="type">선택</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="google.com">google.com</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="nate.com">nate.com</option>
+                    <option value="kakao.com">kakao.com</option>
+                </select>
+            </div>
         </div>
 
         <!-- 전화번호 -->
         <div class="info_phone">
             <h4>전화번호</h4>
-            <select class="box" id="phone1">
-                <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
-                <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
-                <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
-                <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
-            </select> -
-            <input class="box" type="tel" id="phone2" size="5" /> -
-            <input class="box" type="tel" id="phone3" size="5" />
-            <input class="box" type="hidden" placeholder="전화번호를 입력해주세요.">
+            <div id="ardPN">
+                <select class="box" id="phone1">
+                    <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
+                    <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
+                    <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
+                    <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
+                </select> -
+                <input class="box" type="tel" id="phone2" size="5" /> -
+                <input class="box" type="tel" id="phone3" size="5" />
+                <input class="box" type="hidden" placeholder="전화번호를 입력해주세요.">
+            </div>
         </div>
         <hr>
 
