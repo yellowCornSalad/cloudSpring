@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>My Directory</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <style>
+            
+        </style>
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <header>
+            헤더다
+        </header>
+        <div id="content">
+            <div id="sidebar">
+                <div id="myFile" class="side">
+                    <div class="tree_item">
+                        <div class="tree_main tree_pd">
+                            <div class="hover_pd"></div>
+                            <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>&nbsp;내 파일
+                        </div>
+                        <div class="tree_sub">
+                            <div>
+                                <div class="tree_pd">
+                                    <div class="hover_pd"></div>
+                                    <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                    <i class="fa-solid fa-folder"></i>
+                                    <span class="filename">&nbsp;폴더 1</span>
+                                </div>
+                                <div class="tree_sub">
+                                    <div class="tree_pd">
+                                        <div class="hover_pd"></div>
+                                        <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                        <i class="fa-solid fa-folder"></i>
+                                        <span class="filename">&nbsp;폴더 1-1</span>
+                                    </div>
+                                    <div class="tree_sub">
+                                        <div class="tree_pd">
+                                            <div class="hover_pd"></div>
+                                            <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                            <i class="fa-solid fa-folder"></i>
+                                            <span class="filename">&nbsp;폴더 1-1-1</span>
+                                        </div>
+                                        <div class="tree_sub">
+                                            <div class="tree_pd">
+                                                <div class="hover_pd"></div>
+                                                <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                                <i class="fa-solid fa-folder"></i>
+                                                <span class="filename">&nbsp;폴더 1-1-1-1</span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="tree_pd">
+                                    <div class="hover_pd"></div>
+                                    <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                    <i class="fa-solid fa-folder"></i>
+                                    <span class="filename">&nbsp;폴더 2</span>
+                                </div>
+                                <!-- 나중에 폴더가 추가 되면 tree_pd sibling으로 tree_sub 집어넣으면 됨 -->
+                                <div class="tree_sub">
+                                    <div class="tree_pd">
+                                        <div class="hover_pd"></div>
+                                        <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                        <i class="fa-solid fa-folder"></i>
+                                        <span class="filename">&nbsp;폴더 2-1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="tree_pd">
+                                    <div class="hover_pd"></div>
+                                    <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                    <i class="fa-solid fa-folder"></i>
+                                    <span class="filename">&nbsp;폴더 3</span>
+                                </div>
+                                <div class="tree_sub">
+                                    <div class="tree_pd">
+                                        <div class="hover_pd"></div>
+                                        <span class="open_arrow"><i class="fa-solid fa-angle-right"></i></span>
+                                        <i class="fa-solid fa-folder"></i>
+                                        <span class="filename">&nbsp;폴더 3-1</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="fileFormat" class="side">
+                    <div>
+                        <div class="hover_ff"></div>
+                        사진
+                    </div>
+                    <div>
+                        <div class="hover_ff"></div>
+                        동영상
+                    </div>
+                    <div>
+                        <div class="hover_ff"></div>
+                        문서
+                    </div>
+                    <div>
+                        <div class="hover_ff"></div>
+                        음악
+                    </div>
+                </div>
+                <div id="etc" class="side">
+                    <div class="storageSpace">
+                        <p>
+                            <span class="usage">사용용량</span>
+                            <span class="slash">/</span>
+                            <span class="total">전체용량</span>
+                            <span class="use">&nbsp;사용</span>
+                        </p>
+                        <p class="bar">
+                            <span class="usage_bar"></span>
+                            <span class="total_bar"></span>
+                        </p>
+                    </div>
+                    <div class="trash">
+                        <i class="fa-solid fa-trash-can"></i>
+                        휴지통
+                    </div>
+                </div>
+            </div>
+            <div id="right_area">
+                <div id="topbar">
+                    <div id="link_path">
+                        <span class="check_all" name="chk_all">
+                            <label class="chk_box">
+                                <input type="checkbox" class="input_check_all"/>
+                                <span class="on"></span>
+                            </label>
+                        </span>
+                        <div class="path">
+                            <span>내 파일</span>
+                        </div>
+                    </div>
+                    <div id="task_btn_area">
+                        <select name="sort" id="sort">
+                            <option value="new">최신 순</option>
+                            <option value="old">오래된 순</option>
+                        </select>
+                        <span class="material-icons download">
+                            file_download
+                        </span>
+                        <span class="material-icons file_move">
+                            drive_file_move
+                        </span>
+                        <span class="material-icons upload">
+                            cloud_upload
+                        </span>
+                        <span class="material-icons create_folder">
+                            create_new_folder
+                        </span>
+                        <span class="material-icons favorites">
+                            star_outline
+                        </span>  
+                        <span class="material-icons share">
+                            ios_share
+                        </span>
+                        <span class="material-icons delete">
+                            delete
+                        </span>             
+                        
+                    </div>
+                </div>
+                <div id="content1">
+                    <!-- myFile_btn 눌렀을 때 이게 폴더인지,, 이미지인지,, 문서인지,,에 따라서 모달창이 다르게 보여야함 -->
+                    <!-- 나중에 img src와 .info > p html 내용 같게 -->
+                    <p>폴더</p>
+                    <ul class="folder">
+                        
+                        <li>
+                            <div class="myFile_btn">
+                                <p><i class="fa-solid fa-folder fa-4x"></i></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" name="chk" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>새 폴더</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><i class="fa-solid fa-folder fa-4x"></i></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" name="chk" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>새 폴더</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><i class="fa-solid fa-folder fa-4x"></i></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" name="chk" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>새 폴더</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><i class="fa-solid fa-folder fa-4x"></i></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" name="chk" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>새 폴더</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><i class="fa-solid fa-folder fa-4x"></i></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" name="chk" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>새 폴더</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>파일</p>
+                    <ul class="file">
+                        
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/logo.png" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="star">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="myFile_btn">
+                                <p><img src="img/a.jpg" alt=""></p>
+                                <span class="check file_icon">
+                                    <label class="chk_box">
+                                        <input type="checkbox" class="input_check">
+                                        <span class="on"></span>
+                                    </label>
+                                </span>
+                                <span class="favorites file_icon">
+                                    <img src="img/star.png" alt="">
+                                </span> 
+                            </div>
+                            <div class="info">
+                                <p>사진.jpg</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="detail">
+                <div class="modal"></div>
+                <div class="show_detail">
+                    <div class="topbar_detail">
+                        <ul>
+                            <li>
+                                <i class="fa-regular fa-circle-left back_to_main"></i>
+                                <span class="selected_file_name">
+                                    사진.jpg
+                                </span>
+                                <div class="chg_name">
+                                    <input type="text" style="background: transparent;">
+                                    <input type="button" value="변경" class="edit_success">           
+                                </div>
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                <span class="material-icons">
+                                    file_download
+                                </span>
+                                <span class="material-icons more_icon">
+                                    more_vert
+                                </span>
+                                <ul class="more">
+                                    <li>
+                                        <span class="material-icons">
+                                            ios_share
+                                        </span>
+                                        
+                                        공유
+                                    </li>
+                                    <li>
+                                        <span class="material-icons">
+                                            drive_file_move
+                                        </span>
+                                        이동
+                                    </li>
+                                    <li class="favorite_this">
+                                        <span class="material-icons">
+                                            star_outline
+                                        </span>
+                                        즐겨찾기  
+                                    </li>
+                                    <li class="edit_name">
+                                        <span class="material-icons">
+                                            edit
+                                        </span>
+                                        이름변경
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="img_detail">
+                        <i class="fa-solid fa-angle-left prev_btn"></i>
+                        <div class="img_detail_detail">
+                            <img src="img/a.jpg" alt="">
+                        </div>
+                        
+                        <i class="fa-solid fa-angle-right next_btn"></i>
+                    </div>
+                    
+
+                </div>     
+        </div>
+        <div class="detail2">
+            <div class="modal">
+            </div>
+            <div class="create_folder_detail">
+                <div>
+                    새 폴더
+                </div>
+                <div>
+                    <input type="text" placeholder="제목없는 폴더">
+                </div>
+                <div>
+                    <input type="button" value="취소" class="create_cancel">
+                    <input type="button" value="만들기" class="create_success">
+                </div>
+            </div>
+            </div>
+        
+            
+    </body>
+</html>
