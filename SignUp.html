@@ -46,7 +46,7 @@
 
     /* * 아이디와 아이디 입력박스를 한번에 중앙 왼쪽에 위치 시킴 */
     .id_box {
-        position: relative;
+        /* position: relative; */
         width: 500px;
         margin: 15px auto;
         margin-top: 30px;
@@ -140,11 +140,29 @@
         padding-left: 15px;
         padding-right: 15px;
         background-color: #F6F7FA;
-        position: relative;
-        margin: 0 10px auto;
-        bottom: 15px;
-        left: 100px;
+        margin: 0px 0px auto;
+        /* float: center; */
+
+        /* left: 195px; */
     }
+
+    /* 이메일 입력란들을 하나의 div로 묶어 우측정렬 */
+    #move_email {
+        float: right;
+
+    }
+
+    #move_phone {
+        float: right;
+    }
+
+    /* 이메일 박스들이 이메일 글자 오른쪽으로 오도록 */
+    /* #ardEmBx {
+        flex: 0.5;
+        margin-top: -80px;
+        width: 350px;
+        float: right;
+    } */
 
     #put_email_select {
         width: 105px;
@@ -154,10 +172,25 @@
         padding-left: 15px;
         padding-right: 15px;
         background-color: #F6F7FA;
-        position: relative;
+        /* position: relative; */
         margin: 0 10px auto;
         bottom: 15px;
         left: 100px;
+    }
+
+    .info_email {
+        width: 500px;
+        height: 30px;
+        margin: 15px auto;
+        margin-bottom: 30px;
+    }
+
+    .info_phone {
+
+        width: 500px;
+        height: 30px;
+        margin: 15px auto;
+        margin-bottom: 30px;
     }
 
     /* 전화번호 */
@@ -169,8 +202,8 @@
         padding-left: 15px;
         padding-right: 15px;
         background-color: #F6F7FA;
-        position: relative;
-        margin: 0 10px auto;
+        /* position: relative; */
+        margin: 0 5px auto;
         bottom: 15px;
         left: 75px;
     }
@@ -183,7 +216,7 @@
         padding-left: 15px;
         padding-right: 15px;
         background-color: #F6F7FA;
-        position: relative;
+        /* position: relative; */
         margin: 0 10px auto;
         bottom: 15px;
         left: 75px;
@@ -206,7 +239,6 @@
 
     /* 밑줄 */
     hr {
-        margin: 30px auto;
         border: 0.1px solid #A6A6A6;
         display: flex;
         width: 530px;
@@ -226,7 +258,8 @@
 
     <div class="id_box">
         <div style="float:left; clear: both;">* 아이디</div>
-        <input type="text" id="put_id" name="put_id" placeholder="4~20자 사이의 영어, 소문자, 숫자" />
+        <input type="text" id="put_id" name="put_id" pattern="^([a-z0-9_]){4,20}$"
+            placeholder="4~20자 사이의 영어, 소문자, 숫자" />
         <a href="" id="chec_box">중복 체크</a>
         <!-- <div style="float:right; clear: both;" class="label"><a href="">상세보기</a> -->
     </div>
@@ -235,13 +268,14 @@
 
     <div class="id_box">
         <div style="float:left; clear: both;">* 비밀번호</div>
-        <input type="text" id="put_pw" name="put_pw" placeholder="4~20자 사이의 영어, 대소문자, 숫자" />
+        <input type="password" id="put_pw" name="put_pw" pattern="^(?=.*[A-Z])" placeholder="4~20자 사이의 영어, 대소문자, 숫자" />
         <p hidden>"비밀번호를 입력해주세요." </p>
     </div>
     <div class="id_box">
         <div style="float:left; clear: both;">* 비밀번호 확인</div>
-        <input type="text" id="put_Re_pw" name="put_Re_pw" placeholder="4~20자 사이의 영어, 대소문자, 숫자" />
-        <p hidden>"비밀번호 확인을 입력해주세요." </p>
+        <input type="password" id="put_Re_pw" name="put_Re_pw" pattern="^(?=.*[A-Z])"
+            placeholder="4~20자 사이의 영어, 대소문자, 숫자" />
+        <p hidden>"비밀번호를 다시 한번 입력해주세요." </p>
     </div>
     <div class="id_box">
         <div style="float:left; clear: both;">* 이름</div>
@@ -252,32 +286,40 @@
         <div style="float:left; clear: both;">생년월일</div>
         <input type="date" id="put_birth" name=" put_birth" placeholder="년도 -월 -일" />
     </div>
-    <div class="id_box">
-        <div style="float:left; clear: both;">이메일</div>
-        <input type="text" id="put_email" name="put_email" placeholder="이메일 입력" />
-        <input type="text" id="put_email" name="put_email" placeholder="" />
-        <select type="box" id="put_email_select" name="put_email_select" placeholder="">
-            <option value="type">선택</option>
-            <option value="naver.com">naver.com</option>
-            <option value="google.com">google.com</option>
-            <option value="hanmail.net">hanmail.net</option>
-            <option value="nate.com">nate.com</option>
-            <option value="kakao.com">kakao.com</option>
-        </select>
+
+
+    <div class="info_email">
+        <div style="float:left;">이메일</div>
+        <div id="move_email">
+            <input type="text" id="put_email" name="put_email" placeholder="이메일 입력" />@
+            <input type="text" id="put_email" name="put_email" placeholder="" />
+            <select type="box" id="put_email_select" name="put_email_select" placeholder="">
+                <option value="type">선택</option>
+                <option value="naver.com">naver.com</option>
+                <option value="google.com">google.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="nate.com">nate.com</option>
+                <option value="kakao.com">kakao.com</option>
+            </select>
+        </div>
     </div>
-    <div class="id_box">
+
+
+    <div class="info_phone">
         <div style="float:left; clear: both;">* 전화번호</div>
-        <select type="tel" id="put_phone" name="put_phone">
-            <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
-            <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
-            <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
-            <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
-        </select>
-        -
-        <input type="tel" id="put_phone2" name="put_phone" size="5" />
-        -
-        <input type="tel" id="put_phone2" name="put_phone" size="5" />
-        <input type="hidden" placeholder="전화번호를 입력해주세요.">
+        <div id="move_phone">
+            <select type="tel" id="put_phone" name="put_phone">
+                <option <%=phone1.equals("010") ? "selected" : "" %>010</option>
+                <option <%=phone1.equals("02") ? "selected" : "" %>011</option>
+                <option <%=phone1.equals("031") ? "selected" : "" %>02</option>
+                <option <%=phone1.equals("051") ? "selected" : "" %>031</option>
+            </select>-
+
+            <input type="tel" id="put_phone2" name="put_phone" size="5" />-
+
+            <input type="tel" id="put_phone2" name="put_phone" size="5" />
+            <input type="hidden" placeholder="전화번호를 입력해주세요.">
+        </div>
     </div>
     <hr>
     <div class="id_box">
@@ -314,6 +356,22 @@
             <br><br>
             <p><input type="submit" id="submit" name="submit" value="회원가입"></p>
     </div>
+    <script>
+        function PasswordIsSame() {
+            var passwordCheck = document.getElementsByName("put_pw")[0].value;
+
+            if (document.getElementById('put_pw').value != '' && document.getElementById('put_Re_pw').value != '') {
+                if (document.getElementById('put_pw').value == document.getElementById('put_Re_pw').value) {
+                    document.getElementById('put_pw').innerHTML = '비밀번호가 일치합니다.';
+                    document.getElementById('put_pw').style.color = 'blue';
+                }
+                else {
+                    document.getElementById('put_pw').innerHTML = '비밀번호가 일치하지 않습니다.';
+                    document.getElementById('put_pw').style.color = 'red';
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
