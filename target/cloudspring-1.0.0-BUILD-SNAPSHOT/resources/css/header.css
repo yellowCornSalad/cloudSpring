@@ -1,0 +1,24 @@
+header {
+    height: 55px;
+    border-bottom: 1px solid #A6A6A6;
+    background-color: #ACD0CE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+header .logo{
+    height: 40px;
+}
+header .logo img{
+    height: 40px;
+}
+header .menu{
+    display: flex;
+    align-items: center;
+
+}
+header .menu li{
+    padding: 0 10px;
+}
+

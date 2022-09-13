@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cloudSpring:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cloudSpring</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cloudspring-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cloudSpring:war exploded" />
+    </root>
+  </artifact>
+</component>
